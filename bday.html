@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsCecAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAARAAAAAAAQABEAAQAAAREQEQEREAAAEREREREAAAAAERERAAAAAAAREREAAAAAEREREREAAAEREBEBERAAABAAEQABAAAAAAARAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP5/AAD+fwAA7ncAAMJDAADgBwAA+B8AAPgfAADgBwAAwkMAAO53AAD+fwAA/n8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+  <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" >
+  <style>
+      body {
+        font-family: 'Tangerine', serif;
+        font-size: 48px;
+      }
+    </style>
+</head>
+<body>
+
+
+<canvas id="myCanvas" width="1250" height="800" style="border:3px solid #d3d3d3;">
+  Your browser does not support the HTML5 canvas tag.</canvas>
+
+<div style="border: 1px solid red; width: 190px; padding: 10px">Happy birthday</div>
+<header>Press button to start</header>
+
+
+  <button onclick="setTimeout(myFunction, 1000)">start</button>
+
+  <title>Happy birthday</title>
+
+<audio autoplay>
+  <source src="happy-birthday.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<script>
+  function myFunction(){
+  alert('Happy birthday!')
+  }
+    alert('Happy birthday!')
+ //end of dogtype html
+
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+
+  function drawCircle(x, y, r) {
+
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, 2*Math.PI);
+    ctx.closePath();
+    ctx.stroke();
+  }
+
+  //this is for the ground
+  ctx.fillStyle ='white';
+  ctx.beginPath();
+  ctx.rect (-2,500,1260,1260)
+  ctx.fill();
+  ctx.stroke();
+
+  var r1 = 95,
+    r2 = 65,
+    r3 = 35,
+    r4=75,
+    y1 = 475;
+
+  ctx.fillStyle = '#f3f1f1';
+  drawCircle(250, y1+100, r1);
+  ctx.fill()
+  drawCircle(250, y1 - (r1 + r2)+100, r2);
+  ctx.fill()
+  drawCircle(250, y1 - (r1 + r2) - (r2 + r3)+100, r3);
+  ctx.fill()
+
+  //this is the body of the snowman
+
+
+  ctx.fillStyle = 'black';
+  var y3 = y1 - (r1 + r2) - (r2 + r3);
+  drawCircle(250 - 12, y3 +80, 6);
+  ctx.fill()
+  drawCircle(250 + 12, y3 +80, 6);
+  ctx.fill()
+
+  ctx.beginPath();
+  ctx.moveTo(230,(y3+81))
+  ctx.lineTo (260,(y3+81))
+  ctx.stroke();
+
+  //this is the glasses for the snow man
+
+  ctx.beginPath();
+  ctx.moveTo(240,(y3+110))
+  ctx.lineTo (260,(y3+110))
+  ctx.stroke();
+
+  //this is for the mouth of the snowman
+
+  ctx.beginPath();
+  ctx.moveTo(190,(y3+220))
+  ctx.lineTo (135,(y3+220))
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(310,(y3+220))
+  ctx.lineTo (360,(y3+220))
+  ctx.stroke();
+
+  ctx.beginPath()
+  ctx.moveTo (360,(y3+220))
+  ctx.lineTo(360,y3+270)
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.strokeStyle = 'black';
+  ctx.moveTo (135,(y3+220))
+  ctx.lineTo (135,y3+170)
+  ctx.stroke();
+
+  //this is for the hands for the snowman
+
+  ctx.fillStyle = 'orange';
+  drawCircle(-10,y3-180,r4);
+  ctx.fill()
+
+  //this is for the snowman
+   function myFunction(){
+
+    ctx.fillStyle = 'white';
+    ctx.fillRect(355, y3+221, 10, 50);
+    ctx.fillRect(130, y3+169, 10, 50);
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.moveTo (360,(y3+170))
+    ctx.lineTo(360,y3+220)
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.moveTo (135,(y3+220))
+    ctx.lineTo(135,y3+270)
+    ctx.stroke();
+
+    ctx.fillStyle = 'white';
+    ctx.fillRect(1105, y3+221, 10, 50);
+    ctx.fillRect(885, y3+169, 10, 50);
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.moveTo (1110,(y3+170))
+    ctx.lineTo(1110,y3+220)
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.moveTo (890,(y3+220))
+    ctx.lineTo(890,y3+270)
+    ctx.stroke();
+
+    setTimeout(nextFunction, 1000);
+  }
+
+  function nextFunction(){
+
+    ctx.fillStyle = 'white';
+    ctx.fillRect(130, y3+221, 10, 50);
+    ctx.fillRect(355, y3+169, 10, 50);
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.moveTo (135,(y3+170))
+    ctx.lineTo(135,y3+220)
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.moveTo (360,(y3+220))
+    ctx.lineTo(360,y3+270)
+    ctx.stroke();
+
+    ctx.fillRect(885, y3+221, 10, 50);
+    ctx.fillRect(1105, y3+169, 10, 50);
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.moveTo (890,(y3+170))
+    ctx.lineTo(890,y3+220)
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.moveTo (1110,(y3+220))
+    ctx.lineTo(1110,y3+270)
+    ctx.stroke();
+
+    setTimeout(myFunction, 1000);
+  }
+
+
+  ctx.font="130px Verdana";
+  var gradient=ctx.createLinearGradient(0,0,c.width,0);
+  gradient.addColorStop("0","magenta");
+  gradient.addColorStop("0.7","blue");
+  gradient.addColorStop("1.0","red");
+  ctx.strokeStyle='black';
+  ctx.strokeText("Happy birthday!",150,170);
+  ctx.fillStyle=gradient;
+  ctx.fillText("Happy birthday!",150,170);
+
+  ctx.fillStyle = 'white'
+  ctx.rect(140,75,100,100);
+  ctx.fill()
+
+  ctx.strokeStyle = 'black'
+  ctx.fillStyle = '#f3f1f1';
+  drawCircle(1000, y1+100, r1);
+  ctx.fill()
+  drawCircle(1000, y1 - (r1 + r2)+100, r2);
+  ctx.fill()
+  drawCircle(1000, y1 - (r1 + r2) - (r2 + r3)+100, r3);
+  ctx.fill()
+
+  //this is the body of the snowman
+
+
+  ctx.fillStyle = 'black';
+  var y3 = y1 - (r1 + r2) - (r2 + r3);
+  drawCircle(1000 - 12, y3 +80, 6);
+  ctx.fill()
+  drawCircle(1000 + 12, y3 +80, 6);
+  ctx.fill()
+
+  ctx.beginPath();
+  ctx.moveTo(980,(y3+81))
+  ctx.lineTo (1010,(y3+81))
+  ctx.stroke();
+
+  //this is the glasses for the snow man
+
+  ctx.beginPath();
+  ctx.moveTo(990,(y3+110))
+  ctx.lineTo (1010,(y3+110))
+  ctx.stroke();
+
+  //this is for the mouth of the snowman
+
+  ctx.beginPath();
+  ctx.moveTo(940,(y3+220))
+  ctx.lineTo (890,(y3+220))
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(890,(y3+220))
+  ctx.lineTo (890,(y3+170))
+  ctx.stroke();
+
+  ctx.beginPath()
+  ctx.moveTo (1060,(y3+220))
+  ctx.lineTo(1110,y3+220)
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.strokeStyle = 'black';
+  ctx.moveTo (1110,(y3+220))
+  ctx.lineTo (1110,y3+270)
+  ctx.stroke();
+
+    ctx.font="130px Verdana";
+  var gradient=ctx.createLinearGradient(0,0,c.width,0);
+  gradient.addColorStop("0","magenta");
+  gradient.addColorStop("0.7","blue");
+  gradient.addColorStop("1.0","red");
+  ctx.strokeStyle='black';
+  ctx.strokeText("Happy birthday!",150,170);
+  ctx.fillStyle=gradient;
+  ctx.fillText("Happy birthday!",150,170);
+
+    ctx.fillStyle = 'orange';
+  drawCircle(-10,y3-180,r4);
+  ctx.fill()
+
+  console.log('Happy birthday!')
+
+  //this is for the hands for the snowman
+
+  //this is for the snowman
+
+//--------------------------------------------------------------------------------------------------------------------------------------\\
+
+</script>
+</body>
+</html>
